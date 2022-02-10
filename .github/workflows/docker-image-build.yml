@@ -1,0 +1,14 @@
+name: Docker Image Build
+on:
+
+jobs:
+
+  build:
+
+    runs-on: 
+    - linux
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Docker images using docker-compose
+      run: docker-compose -f dc-base.yml build
